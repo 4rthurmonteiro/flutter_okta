@@ -1,0 +1,22 @@
+name: flutter_okta
+description: Flutter okta.
+version: 1.0.0
+homepage: https://github.com/nhancv/flutter_okta
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  web_auth: ^1.0.0
+  dio: ^3.0.10
+  tuple: ^1.0.3
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
