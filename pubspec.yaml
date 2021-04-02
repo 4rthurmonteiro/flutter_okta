@@ -10,7 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  web_auth: ^1.0.0
+  web_auth:
+    git: https://github.com/4rthurmonteiro/flutter_web_auth
   dio: ^3.0.10
   tuple: ^1.0.3
 
