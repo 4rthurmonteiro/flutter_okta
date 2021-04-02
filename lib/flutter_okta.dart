@@ -26,7 +26,8 @@ class FlutterOkta {
       String idpId,
       String oktaDomain,
       String clientId,
-      String redirectUri) async {
+      String redirectUri,
+      String userAgent,) async {
     try {
       String authorizationUrl =
           '$oktaDomain/oauth2/v1/authorize?client_id=$clientId&response_type=id_token%20token&response_mode=fragment&scope=openid&redirect_uri=$redirectUri&state=any&nonce=any&prompt=login';
@@ -34,7 +35,7 @@ class FlutterOkta {
         authorizationUrl += '&idp=$idpId';
       }
       final String result =
-          await WebAuth.open(context, authorizationUrl, redirectUri);
+          await WebAuth.open(context, authorizationUrl, redirectUri, userAgent);
 
       if (result == null) {
         return null;
