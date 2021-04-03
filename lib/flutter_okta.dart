@@ -15,19 +15,25 @@ class FlutterOkta {
   /// https://developer.okta.com/docs/reference/api/oidc/#authorize
   /// Okta OpenID login
   /// Return <idToken, accessToken>
-  Future<Tuple2<String, String>> openIdOktaLogin(BuildContext context,
-      String oktaDomain, String clientId, String redirectUri) async {
-    return openIdSocialLogin(context, null, oktaDomain, clientId, redirectUri);
+  Future<Tuple2<String, String>> openIdOktaLogin(
+      BuildContext context,
+      String oktaDomain,
+      String clientId,
+      String redirectUri,
+      String userAgent) async {
+    return openIdSocialLogin(
+        context, null, oktaDomain, clientId, redirectUri, userAgent);
   }
 
   /// Social OpenID login
   Future<Tuple2<String, String>> openIdSocialLogin(
-      BuildContext context,
-      String idpId,
-      String oktaDomain,
-      String clientId,
-      String redirectUri,
-      String userAgent,) async {
+    BuildContext context,
+    String idpId,
+    String oktaDomain,
+    String clientId,
+    String redirectUri,
+    String userAgent,
+  ) async {
     try {
       String authorizationUrl =
           '$oktaDomain/oauth2/v1/authorize?client_id=$clientId&response_type=id_token%20token&response_mode=fragment&scope=openid&redirect_uri=$redirectUri&state=any&nonce=any&prompt=login';
